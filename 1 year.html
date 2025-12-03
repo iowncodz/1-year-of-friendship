@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Year of Amazing Friendship! 🥳</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-light': '#38BDF8', // Sky Blue-400
+                        'accent-pink': '#F472B6', // Light Pink-400 (Cute Pink)
+                        'bg-main': '#F9FBFD', // Very Light Background
+                        'card-bg': '#FFFFFF', // White Card Background
+                        'text-dark': '#1F2937', // Dark Gray Text
+                        'cute-green': '#4ADE80', // Light Green
+                        'vibrant-red': '#F87171', // Light Red
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Changed background to light color */
+        body {
+            background-color: #F9FBFD; /* Very Light Background */
+            color: #1F2937; /* Dark text for light background */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            color: #F472B6; /* Pink Title Color */
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #38BDF8; /* Sky Blue Underline */
+            border-radius: 9999px;
+        }
+        /* Memory Match Card Styling Updated for Bright Colors */
+        .card {
+            width: 80px; 
+            height: 80px;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.1);
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 12px;
+        }
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            user-select: none;
+        }
+        .card-front {
+            background-color: #38BDF8; /* Primary Light Blue */
+            color: #FFFFFF;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+            background-image: linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2) 100%);
+            background-size: 8px 8px;
+        }
+        .card-back {
+            background-color: #FEE2E2; /* Very Light Red/Pink */
+            color: #1F2937;
+            transform: rotateY(180deg);
+        }
+        /* Responsive adjustments for the game board */
+        @media (max-width: 640px) {
+            .card {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+        /* Coin Toss Animation */
+        .coin-wrapper {
+            perspective: 1000px;
+            width: 100px;
+            height: 100px;
+        }
+        .coin {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.7); /* Pink Shadow */
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+        .coin-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            backface-visibility: hidden;
+            border: 4px solid #F472B6; /* Pink border */
+        }
+        .head-face {
+            background-color: #F472B6; /* Pink */
+            color: #FFFFFF;
+            transform: rotateY(0deg);
+        }
+        .tail-face {
+            background-color: #38BDF8; /* Sky Blue */
+            color: #FFFFFF;
+            transform: rotateY(180deg);
+        }
+        .tossing-head {
+            animation: flip-to-head 1s ease-out forwards;
+        }
+        .tossing-tail {
+            animation: flip-to-tail 1s ease-out forwards;
+        }
+        @keyframes flip-to-head {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(1080deg); }
+        }
+        @keyframes flip-to-tail {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(1260deg); }
+        }
+
+        /* RPS Styling */
+        .rps-choice {
+            padding: 0.75rem;
+            font-size: 2.5rem;
+            border-radius: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .rps-choice:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #F472B6; /* Pink shadow */
+        }
+
+        /* Cute rotating emoji decoration */
+        .rotating-emoji {
+            display: inline-block;
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-text-dark min-h-screen">
+
+    <nav class="sticky top-0 z-10 bg-card-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-extrabold text-accent-pink flex items-center">
+                1 YEAR 💖 <span class="ml-2 text-2xl rotating-emoji">✨</span>
+            </h1>
+            <div class="space-x-4 md:space-x-8">
+                <a href="#wishes" class="text-text-dark hover:text-primary-light transition duration-300 font-medium">Wishes</a>
+                <a href="#videos" class="text-text-dark hover:text-primary-light transition duration-300 font-medium">Memories</a>
+                <a href="#games" class="text-text-dark hover:text-primary-light transition duration-300 font-medium">Games</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 md:px-8 py-12 space-y-20">
+
+        <section id="wishes" class="text-center py-16 md:py-24 bg-card-bg rounded-xl shadow-2xl border-4 border-primary-light/50">
+            
+            <div class="w-24 h-24 mx-auto mb-6">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3V4M25yOTk4OHVvNHFqZ24wM2I3ZzM3Y2lqOHI2cWVlajc3ZHd5NyZlcD12MV9pbnRlcm5hbF9naWYmY3Q9cw/iN91I41b9TzJt6RkEa/giphy.gif" alt="Cute Friends GIF" class="w-full h-full object-cover rounded-full shadow-lg border-4 border-accent-pink">
+            </div>
+
+            <h2 class="text-5xl md:text-7xl font-bold mb-4 text-accent-pink">
+                Happy One Year of Friendship, Isra! <span class="inline-block animate-pulse">😻🍦</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-500 mb-8 max-w-3xl mx-auto">
+                Time flies when you're having fun! Here's to 365 days of sparkle, laughter, and support. This page is just for you. ✨
+            </p>
+
+            <div class="mt-10 p-6 md:p-10 bg-bg-main rounded-lg max-w-4xl mx-auto border-2 border-accent-pink/50 shadow-inner">
+                <h3 class="text-3xl font-semibold mb-4 text-primary-light flex justify-center items-center">
+                    My Heartfelt Message to You <span class="ml-2">🎀</span>
+                </h3>
+                <p class="text-gray-700 text-left leading-relaxed">
+Isra, ek saal ho chuka hai humari dosti ko. December mai exactly ek saal complete ho jayega.
+Kabhi socha nahi tha ke ek random insan itna important ban jayega.
+But you did.
+You really did.
+
+Thankyou for coming into my life.
+Thankyou for staying.
+Thankyou for being the one person jiske saath main apni life ka har ache-bura moment share kar sakta hoon without thinking twice.
+
+Iss ek saal mai humne bohot kuch dekha.
+Hasi bhi, fights bhi, misunderstandings bhi, aur woh bade bade silent phases bhi.
+Phir bhi ek cheez constant rahi
+hum dono ka ek-dusre ke paas laut aana.
+
+Har baar jab laga dosti toot jayegi,
+Har baar jab laga keh sab khatam…
+Kisi na kisi tarah hum phir se ek dusre tak aa hi gaye.
+Shayad isi ko connection bolte hain.
+
+Thankyou for making me smile jab mujhe lagta tha smile karna mumkin nahi.
+Thankyou for understanding me even when I had no words.
+Thankyou for being kind even when I wasn’t at my best.
+Thankyou for caring about me, sometimes more than I cared for myself.
+
+Isra…
+Main bas itna chahta hoon ke 2025 ke baad, 2026, 2027, jitne saal aayenge
+hum un sab mein saath rahe.
+Paas rahe.
+Connected rahe.
+
+Misunderstandings aayengi
+par hum dono baat karke sab solve kar lenge jaise humesha kiya hai.
+Main promise karta hoon jitna ho sake utna honestly, clearly, aur patience ke saath handle karunga.
+Bas tu mere saath rehna.
+
+I appreciate you for everything
+for your support,
+your patience,
+your care,
+your existence.
+
+And I love you so much, Isra.
+Not in a filmy way
+but in a real, pure, “I don’t want to lose you again” way. <span class="text-vibrant-red">💞</span>
+
+Thankyou for being my person.
+Thankyou for this whole year.
+Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span>                </p>
+                <p class="mt-6 text-right font-medium text-accent-pink">
+                    — Your Best Friend, Ayaan <span class="text-cute-green">🐸</span>
+                </p>
+            </div>
+            
+            <div class="mt-12 p-4 bg-cute-green/20 rounded-lg max-w-lg mx-auto border border-cute-green">
+                <p id="cat-fact" class="text-lg font-medium text-gray-700 flex items-center justify-center">
+                    <span class="mr-2 text-2xl">🐾</span> Fun Cat Fact: Cats sleep for about two-thirds of their lives! That means a nine-year-old cat has been awake for only three years.
+                </p>
+            </div>
+            <p class="mt-8 text-3xl">💖🌈💫</p>
+        </section>
+
+<hr class="border-accent-pink/50">
+
+        <section id="videos" class="py-12">
+            <h2 class="section-title text-4xl font-bold mb-10 mx-auto w-fit">
+                Our Sparkly Memory Reel 📽️
+            </h2>
+            <p class="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
+                Har video ek saal ki kahani hai. Awaz ke liye video par Play button dabana zaroori hai!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="video-grid">
+                
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_1.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 1: Hamari Pehli Mulakat 🌷</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_2.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 2: Safar/Trip ki Masti 🗺️</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_3.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 3: Woh Mazaakia Pal (Funny Moment) 😂</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_4.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 4: Unexpected Plan (Achanak ka Plan) ⚡</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_5.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 5: Favorite Hangout Spot 🛋️</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_6.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 6: Birthday/Celebration ki Yaadein 🎂</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_7.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 7: Ajeeb si Harkatein (Crazy Moments) 🤪</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_8.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 8: Rainy Day Fun ☔</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_9.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 9: Lunch/Dinner ki Masti 🍕</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_10.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 10: Special Message/Moment 💌</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-lg overflow-hidden shadow-xl transform hover:scale-[1.02] transition duration-300 border border-primary-light/30">
+                    <div class="w-full">
+                        <video class="w-full object-contain" controls preload="metadata">
+                            <source src="videos/video_11.mp4" type="video/mp4">
+                            Aapka browser video ko support nahi karta.
+                        </video>
+                    </div>
+                    <div class="p-4 bg-primary-light/10">
+                        <p class="text-lg font-semibold text-accent-pink">Video 11: Ek Saal Pura Hone Par ❤️</p>
+                        <p class="text-sm text-gray-600">**APNE HISAB SE TITLE AUR DATE BADLEIN!**</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="mt-8 text-3xl">🍦🦋🌟</p>
+        </section>
+
+
+<hr class="border-accent-pink/50">
+
+        <section id="games" class="py-12 bg-card-bg rounded-xl shadow-2xl p-6 md:p-12 border-4 border-accent-pink/50">
+            <h2 class="section-title text-4xl font-bold mb-10 mx-auto w-fit">
+                Fun & Games for Two! 🎮
+            </h2>
+            <p class="text-center text-gray-500 mb-8 max-w-2xl mx-auto">
+                Time for some friendly fun! Har game mein jeetne waale ko ice cream milegi! 🍨
+            </p>
+            
+            <div class="space-y-16">
+                
+                <div class="pb-8 border-b border-gray-200">
+                    <h3 class="text-3xl font-semibold text-primary-light mb-6 text-center">
+                        Game 1: The Memory Match (Cat & Ice Cream Edition!)
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Test your memory! Match the pairs of emojis to win. Find the cute **Cat 🐈** and the delicious **Ice Cream 🍦**!
+                    </p>
+
+                    <div id="game-container-memory" class="flex flex-col items-center">
+                        <div id="game-board" class="grid gap-3 p-3 bg-bg-main rounded-xl shadow-inner max-w-lg mx-auto" style="grid-template-columns: repeat(4, 1fr);">
+                            </div>
+
+                        <div class="mt-8 flex flex-col items-center">
+                            <p id="score-display" class="text-xl font-bold text-primary-light mb-4">Matches: 0 / 8</p>
+                            <button id="restart-button-memory" class="bg-accent-pink hover:bg-vibrant-red text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105" onclick="initGame()">
+                                Restart Memory Game
+                            </button>
+                            <div id="game-message-memory" class="mt-4 p-4 text-center bg-cute-green text-white rounded-lg hidden shadow-xl" role="alert">
+                                You did it! You remembered all our moments! 🎉
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pb-8 border-b border-gray-200">
+                    <h3 class="text-3xl font-semibold text-primary-light mb-6 text-center">
+                        Game 2: The Friendship Coin Toss 🪙
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Flip the coin to settle any friendly debate. Heads (👑) or Tails (🪙)?
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="coin-wrapper">
+                            <div id="coin" class="coin">
+                                <div class="coin-face head-face">👑</div>
+                                <div class="coin-face tail-face">🪙</div>
+                            </div>
+                        </div>
+                        <div id="coin-result" class="mt-6 text-2xl font-bold text-accent-pink">
+                            Click "Toss" to begin!
+                        </div>
+                        <button id="toss-button" class="mt-6 bg-primary-light hover:bg-primary-light/80 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            Toss Coin
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pb-8 border-b border-gray-200">
+                    <h3 class="text-3xl font-semibold text-primary-light mb-6 text-center">
+                        Game 3: Friendship Magic 8-Ball 🔮
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Ask a yes/no question about our friendship or future plans and shake the ball for an answer!
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="relative p-4 bg-gray-200 rounded-lg shadow-xl w-full max-w-sm">
+                            <input type="text" id="eight-ball-question" placeholder="Ask a question (e.g., Will we get ice cream tonight?)" class="w-full p-3 rounded-lg bg-card-bg text-text-dark placeholder-gray-400 focus:ring-accent-pink focus:border-accent-pink border mb-4">
+                            <div id="eight-ball-display" class="w-28 h-28 md:w-32 md:h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto shadow-inner border-4 border-gray-500">
+                                <span id="eight-ball-answer" class="text-sm font-bold text-cute-green text-center p-2">Ask Me!</span>
+                            </div>
+                        </div>
+                        <button id="eight-ball-button" class="mt-6 bg-accent-pink hover:bg-vibrant-red text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            Shake the Ball!
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pb-8 border-b border-gray-200">
+                    <h3 class="text-3xl font-semibold text-primary-light mb-6 text-center">
+                        Game 4: Guess the Secret Number 🔢
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Guess the secret number between 1 and 100. Let's see how well your intuition works!
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="p-4 bg-gray-200 rounded-lg shadow-xl w-full max-w-sm">
+                            <input type="number" id="guess-input" placeholder="Enter your guess (1-100)" min="1" max="100" class="w-full p-3 rounded-lg bg-card-bg text-text-dark placeholder-gray-400 focus:ring-accent-pink focus:border-accent-pink border mb-4">
+                            <button id="guess-button" class="w-full bg-primary-light hover:bg-primary-light/80 text-white font-bold py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-[1.01]">
+                                Submit Guess
+                            </button>
+                            <p id="guess-message" class="mt-4 text-center text-lg font-medium text-text-dark">Start guessing!</p>
+                            <p id="guess-attempts" class="mt-2 text-center text-sm text-gray-500">Attempts: 0</p>
+                        </div>
+                        <button id="restart-guess-button" class="mt-4 text-sm text-accent-pink hover:text-vibrant-red" onclick="initGuessGame()">
+                            Restart Game
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pb-8">
+                    <h3 class="text-3xl font-semibold text-primary-light mb-6 text-center">
+                        Game 5: Rock, Paper, Scissors 👊
+                    </h3>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Classic fun! Challenge the computer to a round of Rock, Paper, Scissors.
+                    </p>
+                    <div class="flex flex-col items-center">
+                        <div class="flex space-x-6 mb-8">
+                            <button class="rps-choice bg-vibrant-red hover:bg-vibrant-red/80 text-white" data-choice="rock">🪨</button>
+                            <button class="rps-choice bg-cute-green hover:bg-cute-green/80 text-white" data-choice="paper">📰</button>
+                            <button class="rps-choice bg-primary-light hover:bg-primary-light/80 text-white" data-choice="scissors">✂️</button>
+                        </div>
+                        <div id="rps-display" class="text-center p-4 bg-gray-200 rounded-lg shadow-inner w-full max-w-sm">
+                            <p id="rps-user-choice" class="text-xl text-text-dark">Your Choice: ?</p>
+                            <p id="rps-comp-choice" class="text-xl text-text-dark mt-2">Computer Choice: ?</p>
+                            <p id="rps-result" class="text-3xl font-bold text-accent-pink mt-4">Make a choice!</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-8 text-3xl text-center">💖🎁🎉</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary-light/20 text-center py-6 mt-12">
+        <p class="text-gray-700 text-sm">
+            Created by Ayaan /@iown_codz with <span class="text-vibrant-red">❤️</span> for Isra's one-year celebration.
+        </p>
+    </footer>
+
+    <script>
+        // --- Game 1: Memory Match Game Logic ---
+        const gameBoard = document.getElementById('game-board');
+        const scoreDisplay = document.getElementById('score-display');
+        const gameMessageMemory = document.getElementById('game-message-memory');
+
+        // Updated cute emojis, including Cat and Ice Cream
+        const emojis = ['🐈', '🍦', '💖', '🌟', '🎀', '✨', '🐾', '🌸']; 
+        let gameCards = [];
+        let flippedCards = [];
+        let matchesFound = 0;
+        let canFlip = true;
+        
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initGame() {
+            flippedCards = [];
+            matchesFound = 0;
+            canFlip = true;
+            gameBoard.innerHTML = '';
+            gameMessageMemory.classList.add('hidden');
+            scoreDisplay.textContent = 'Matches: 0 / 8';
+
+            // Create the card array (pairs of emojis)
+            gameCards = shuffle([...emojis, ...emojis]);
+
+            // Create 16 card elements
+            gameCards.forEach((emoji, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.emoji = emoji;
+                card.dataset.index = index;
+                card.innerHTML = `
+                    <div class="card-inner">
+                        <div class="card-front">?</div>
+                        <div class="card-back">${emoji}</div>
+                    </div>
+                `;
+                card.addEventListener('click', () => flipCard(card, emoji));
+                gameBoard.appendChild(card);
+            });
+        }
+
+        function flipCard(cardElement, emoji) {
+            if (!canFlip || cardElement.classList.contains('flipped') || flippedCards.length === 2) {
+                return;
+            }
+
+            cardElement.classList.add('flipped');
+            flippedCards.push({ element: cardElement, emoji: emoji });
+
+            if (flippedCards.length === 2) {
+                canFlip = false;
+                setTimeout(checkForMatch, 1000);
+            }
+        }
+
+        function checkForMatch() {
+            const [card1, card2] = flippedCards;
+            
+            if (card1.emoji === card2.emoji) {
+                matchesFound++;
+                scoreDisplay.textContent = `Matches: ${matchesFound} / 8`;
+                
+                card1.element.removeEventListener('click', flipCard);
+                card2.element.removeEventListener('click', flipCard);
+                card1.element.classList.add('ring-4', 'ring-accent-pink');
+                card2.element.classList.add('ring-4', 'ring-accent-pink');
+                
+                if (matchesFound === emojis.length) {
+                    gameMessageMemory.textContent = "CONGRATULATIONS! You found all 8 pairs! 🎉 You have a great memory, Isra!";
+                    gameMessageMemory.classList.remove('hidden', 'bg-red-500', 'bg-yellow-500');
+                    gameMessageMemory.classList.add('bg-cute-green');
+                }
+            } else {
+                setTimeout(() => {
+                    card1.element.classList.remove('flipped');
+                    card2.element.classList.remove('flipped');
+                }, 500);
+            }
+
+            flippedCards = [];
+            canFlip = true;
+        }
+
+        document.addEventListener('DOMContentLoaded', initGame);
+
+
+        // --- Game 2: Coin Toss Logic ---
+        const coinElement = document.getElementById('coin');
+        const tossButton = document.getElementById('toss-button');
+        const coinResult = document.getElementById('coin-result');
+
+        tossButton.addEventListener('click', () => {
+            tossButton.disabled = true;
+            tossButton.textContent = 'Tossing...';
+
+            // Randomly choose Heads or Tails (0=Heads, 1=Tails)
+            const result = Math.floor(Math.random() * 2);
+            const resultText = result === 0 ? 'Heads (👑)' : 'Tails (🪙)';
+            
+            coinElement.style.transition = 'transform 0.1s';
+            coinElement.style.transform = 'rotateY(0deg)'; // Reset position
+            
+            coinResult.textContent = 'Flipping...';
+
+            // Use requestAnimationFrame to ensure CSS classes are applied sequentially
+            requestAnimationFrame(() => {
+                coinElement.classList.remove('tossing-head', 'tossing-tail');
+                void coinElement.offsetWidth; // Trigger reflow to restart animation
+                coinElement.style.transition = ''; // Remove transition for animation
+                coinElement.classList.add(result === 0 ? 'tossing-head' : 'tossing-tail');
+            });
+
+            // Wait for the animation (1 second) to complete before showing result
+            setTimeout(() => {
+                coinResult.textContent = `The result is: ${resultText}!`;
+                tossButton.disabled = false;
+                tossButton.textContent = 'Toss Coin';
+            }, 1000);
+        });
+
+
+        // --- Game 3: Magic 8-Ball Logic ---
+        const eightBallButton = document.getElementById('eight-ball-button');
+        const eightBallAnswer = document.getElementById('eight-ball-answer');
+        const eightBallQuestion = document.getElementById('eight-ball-question');
+
+        const eightBallResponses = [
+            "Absolutely! A definite yes. ✨",
+            "It is certain. Go for it!",
+            "Without a doubt. 👍",
+            "Yes, definitely.",
+            "You may rely on it.",
+            "As I see it, yes.",
+            "Most likely.",
+            "Outlook good.",
+            "Signs point to yes.",
+            "Reply hazy, try again.",
+            "Ask again later. 🤫",
+            "Better not tell you now.",
+            "Cannot predict now.",
+            "Concentrate and ask again.",
+            "Don't count on it.",
+            "My reply is no.",
+            "My sources say no. 😔",
+            "Outlook not so good.",
+            "Very doubtful.",
+            "Only if we get ice cream first! 🍦"
+        ];
+
+        eightBallButton.addEventListener('click', () => {
+            const question = eightBallQuestion.value.trim();
+            if (question.length < 5 || !question.endsWith('?')) {
+                eightBallAnswer.textContent = "Ask a real question first!";
+                eightBallAnswer.classList.remove('text-cute-green');
+                eightBallAnswer.classList.add('text-accent-pink');
+                return;
+            }
+
+            eightBallAnswer.textContent = "Shaking...";
+            eightBallAnswer.classList.remove('text-cute-green', 'text-accent-pink', 'text-vibrant-red');
+            eightBallAnswer.classList.add('text-gray-400');
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * eightBallResponses.length);
+                const answer = eightBallResponses[randomIndex];
+                eightBallAnswer.textContent = answer;
+
+                // Color code the response
+                if (answer.includes('yes') || answer.includes('certain') || answer.includes('good') || answer.includes('rely') || answer.includes('only if')) {
+                    eightBallAnswer.classList.remove('text-gray-400', 'text-accent-pink', 'text-vibrant-red');
+                    eightBallAnswer.classList.add('text-cute-green');
+                } else if (answer.includes('hazy') || answer.includes('later') || answer.includes('cannot') || answer.includes('concentrate')) {
+                    eightBallAnswer.classList.remove('text-cute-green', 'text-vibrant-red');
+                    eightBallAnswer.classList.add('text-accent-pink');
+                } else {
+                    eightBallAnswer.classList.remove('text-cute-green', 'text-accent-pink');
+                    eightBallAnswer.classList.add('text-vibrant-red');
+                }
+            }, 500);
+        });
+
+
+        // --- Game 4: Guess the Number Logic ---
+        const guessInput = document.getElementById('guess-input');
+        const guessButton = document.getElementById('guess-button');
+        const guessMessage = document.getElementById('guess-message');
+        const guessAttempts = document.getElementById('guess-attempts');
+        
+        let secretNumber = 0;
+        let attempts = 0;
+
+        function initGuessGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1; // Number between 1 and 100
+            attempts = 0;
+            guessMessage.textContent = "A new number has been chosen!";
+            guessMessage.classList.remove('text-cute-green', 'text-vibrant-red');
+            guessMessage.classList.add('text-text-dark');
+            guessAttempts.textContent = `Attempts: 0`;
+            guessInput.value = '';
+            guessButton.disabled = false;
+        }
+
+        function checkGuess() {
+            const guess = parseInt(guessInput.value, 10);
+
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                guessMessage.textContent = "Please enter a valid number between 1 and 100.";
+                guessMessage.classList.remove('text-cute-green', 'text-text-dark');
+                guessMessage.classList.add('text-vibrant-red');
+                return;
+            }
+
+            attempts++;
+            guessAttempts.textContent = `Attempts: ${attempts}`;
+
+            if (guess === secretNumber) {
+                guessMessage.textContent = `🎉 AMAZING! You guessed the number in ${attempts} attempts!`;
+                guessMessage.classList.remove('text-text-dark', 'text-vibrant-red');
+                guessMessage.classList.add('text-cute-green');
+                guessButton.disabled = true;
+            } else if (guess < secretNumber) {
+                guessMessage.textContent = "Too low! Try a higher number.";
+                guessMessage.classList.remove('text-cute-green', 'text-vibrant-red');
+                guessMessage.classList.add('text-text-dark');
+            } else {
+                guessMessage.textContent = "Too high! Try a lower number.";
+                guessMessage.classList.remove('text-cute-green', 'text-vibrant-red');
+                guessMessage.classList.add('text-text-dark');
+            }
+        }
+
+        guessButton.addEventListener('click', checkGuess);
+        document.addEventListener('DOMContentLoaded', initGuessGame);
+
+
+        // --- Game 5: Rock, Paper, Scissors Logic ---
+        const rpsChoices = document.querySelectorAll('.rps-choice');
+        const rpsUserChoice = document.getElementById('rps-user-choice');
+        const rpsCompChoice = document.getElementById('rps-comp-choice');
+        const rpsResult = document.getElementById('rps-result');
+        
+        const rpsOptions = {
+            rock: { emoji: '🪨', winsAgainst: 'scissors' },
+            paper: { emoji: '📰', winsAgainst: 'rock' },
+            scissors: { emoji: '✂️', winsAgainst: 'paper' }
+        };
+
+        function playRPS(userChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const compChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            rpsUserChoice.textContent = `Your Choice: ${rpsOptions[userChoice].emoji}`;
+            rpsCompChoice.textContent = `Computer Choice: ${rpsOptions[compChoice].emoji}`;
+            
+            let resultText = '';
+            rpsResult.classList.remove('text-cute-green', 'text-accent-pink', 'text-vibrant-red');
+
+            if (userChoice === compChoice) {
+                resultText = "It's a TIE! Try again! 🤝";
+                rpsResult.classList.add('text-accent-pink');
+            } else if (rpsOptions[userChoice].winsAgainst === compChoice) {
+                resultText = "YOU WIN! 🎉 Great job, Bestie!";
+                rpsResult.classList.add('text-cute-green');
+            } else {
+                resultText = "COMPUTER WINS! Better luck next time! 🥺";
+                rpsResult.classList.add('text-vibrant-red');
+            }
+            
+            rpsResult.textContent = resultText;
+        }
+
+        rpsChoices.forEach(button => {
+            button.addEventListener('click', (e) => {
+                playRPS(e.currentTarget.dataset.choice);
+            });
+        });
+
+
+        // --- Smooth Scrolling ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
