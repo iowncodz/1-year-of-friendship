@@ -240,7 +240,7 @@ Thankyou for being kind even when I wasn’t at my best.
 Thankyou for caring about me, sometimes more than I cared for myself.
 
 Isra…
-Main bas itna chahta hoon ke 2025 ke baad, 2026, 2027, jitne saal aayenge
+Main bas इतना chahta hoon ke 2025 ke baad, 2026, 2027, jitne saal aayenge
 hum un sab mein saath rahe.
 Paas rahe.
 Connected rahe.
@@ -443,7 +443,7 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                 Fun & Games for Two! 🎮
             </h2>
             <p class="text-center text-gray-500 mb-8 max-w-2xl mx-auto">
-                Time for some friendly fun! Har game mein jeetne waale ko ice cream milegi! 🍨
+                Time for some friendly fun! Har game jeeto aur ek secret message ka piece pao! 🧩
             </p>
             
             <div class="space-y-16">
@@ -453,10 +453,11 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                         Game 1: The Memory Match (Cat & Ice Cream Edition!)
                     </h3>
                     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Test your memory! Match the pairs of emojis to win. Find the cute **Cat 🐈** and the delicious **Ice Cream 🍦**!
+                        Test your memory! Match the pairs of emojis to win.
                     </p>
+                    <div id="secret-msg-memory" class="mt-4 p-3 text-center bg-cute-green/30 text-cute-green font-bold rounded-lg hidden shadow transition-all duration-500"></div>
 
-                    <div id="game-container-memory" class="flex flex-col items-center">
+                    <div id="game-container-memory" class="flex flex-col items-center mt-4">
                         <div id="game-board" class="grid gap-3 p-3 bg-bg-main rounded-xl shadow-inner max-w-sm mx-auto" style="grid-template-columns: repeat(4, 1fr);">
                             </div>
 
@@ -477,9 +478,11 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                         Game 2: The Friendship Coin Toss 🪙
                     </h3>
                     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Flip the coin to settle any friendly debate. Heads (👑) or Tails (🪙)?
+                        Flip the coin to settle any friendly debate. Heads (👑) ya Tails (🪙)? **Heads aane par tum jeetogi!**
                     </p>
-                    <div class="flex flex-col items-center">
+                    <div id="secret-msg-coin" class="mt-4 p-3 text-center bg-cute-green/30 text-cute-green font-bold rounded-lg hidden shadow transition-all duration-500"></div>
+
+                    <div class="flex flex-col items-center mt-4">
                         <div class="coin-wrapper">
                             <div id="coin" class="coin">
                                 <div class="coin-face head-face">👑</div>
@@ -500,9 +503,11 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                         Game 3: Friendship Magic 8-Ball 🔮
                     </h3>
                     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Ask a yes/no question about our friendship or future plans and shake the ball for an answer!
+                        Ask a yes/no question about our friendship or future plans and shake the ball for an answer! (**Positive answer aane par tum jeetogi!**)
                     </p>
-                    <div class="flex flex-col items-center">
+                    <div id="secret-msg-eightball" class="mt-4 p-3 text-center bg-cute-green/30 text-cute-green font-bold rounded-lg hidden shadow transition-all duration-500"></div>
+
+                    <div class="flex flex-col items-center mt-4">
                         <div class="relative p-4 bg-gray-200 rounded-lg shadow-xl w-full max-w-sm">
                             <input type="text" id="eight-ball-question" placeholder="Ask a question (e.g., Will we get ice cream tonight?)" class="w-full p-3 rounded-lg bg-card-bg text-text-dark placeholder-gray-400 focus:ring-accent-pink focus:border-accent-pink border mb-4">
                             <div id="eight-ball-display" class="w-28 h-28 md:w-32 md:h-32 bg-gray-900 rounded-full flex items-center justify-center mx-auto shadow-inner border-4 border-gray-500">
@@ -520,9 +525,11 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                         Game 4: Guess the Secret Number 🔢
                     </h3>
                     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Guess the secret number between 1 and 100. Let's see how well your intuition works!
+                        Guess the secret number between 1 and 100.
                     </p>
-                    <div class="flex flex-col items-center">
+                    <div id="secret-msg-guess" class="mt-4 p-3 text-center bg-cute-green/30 text-cute-green font-bold rounded-lg hidden shadow transition-all duration-500"></div>
+
+                    <div class="flex flex-col items-center mt-4">
                         <div class="p-4 bg-gray-200 rounded-lg shadow-xl w-full max-w-sm">
                             <input type="number" id="guess-input" placeholder="Enter your guess (1-100)" min="1" max="100" class="w-full p-3 rounded-lg bg-card-bg text-text-dark placeholder-gray-400 focus:ring-accent-pink focus:border-accent-pink border mb-4">
                             <button id="guess-button" class="w-full bg-primary-light hover:bg-primary-light/80 text-white font-bold py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-[1.01]">
@@ -542,9 +549,11 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                         Game 5: Rock, Paper, Scissors 👊
                     </h3>
                     <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Classic fun! Challenge the computer to a round of Rock, Paper, Scissors.
+                        Classic fun! Challenge the computer to a round of Rock, Paper, Scissors. (**Jeetne par tumhara last secret piece milega!**)
                     </p>
-                    <div class="flex flex-col items-center">
+                    <div id="secret-msg-rps" class="mt-4 p-3 text-center bg-cute-green/30 text-cute-green font-bold rounded-lg hidden shadow transition-all duration-500"></div>
+
+                    <div class="flex flex-col items-center mt-4">
                         <div class="flex space-x-6 mb-8">
                             <button class="rps-choice bg-vibrant-red hover:bg-vibrant-red/80 text-white" data-choice="rock">🪨</button>
                             <button class="rps-choice bg-cute-green hover:bg-cute-green/80 text-white" data-choice="paper">📰</button>
@@ -562,6 +571,9 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
             </div>
         </section>
 
+        <section id="final-secret-message" class="py-16 mt-16 bg-accent-pink/20 rounded-xl shadow-2xl p-6 md:p-12 text-center border-4 border-vibrant-red hidden transition-all duration-1000">
+            </section>
+
     </main>
 
     <footer class="bg-primary-light/20 text-center py-6 mt-12">
@@ -571,12 +583,66 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
     </footer>
 
     <script>
+        // --- SECRET MESSAGE LOGIC ---
+        const gameStatus = {
+            memory: false,
+            coin: false,
+            eightball: false,
+            guess: false,
+            rps: false
+        };
+
+        const secretMessages = {
+            memory: "Part 1: You are the 💖 of my life.",
+            coin: "Part 2: I always 👑 choose you.",
+            eightball: "Part 3: Our friendship is 🌟 magical.",
+            guess: "Part 4: You are my number 1️⃣ Bestie.",
+            rps: "Part 5: I'll always be your 🛡️ defense.",
+            final: `
+                <h2 class="text-4xl md:text-5xl font-extrabold text-vibrant-red mb-6 animate-pulse">
+                    The Final Secret Wish! 💌
+                </h2>
+                <p class="text-xl md:text-2xl text-text-dark mb-6 font-semibold">
+                    Dear Isra, you collected all the pieces!
+                </p>
+                <p class="text-3xl font-bold italic text-primary-light px-2 md:px-10 leading-snug">
+                    "Every day with you is a **WIN**! Thank you for the best year. My biggest wish is that we stay this close, creating a lifetime of memories. I love you, best friend. Always and forever."
+                </p>
+                <p class="mt-8 text-4xl">♾️💞🎉</p>
+            `
+        };
+
+        function checkFinalMessage() {
+            const allWon = Object.values(gameStatus).every(status => status === true);
+            if (allWon) {
+                const finalSection = document.getElementById('final-secret-message');
+                finalSection.innerHTML = secretMessages.final;
+                finalSection.classList.remove('hidden');
+                // Smooth scroll to the final message
+                setTimeout(() => {
+                    finalSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 500);
+            }
+        }
+
+        function revealSecretMessage(gameId) {
+            if (gameStatus[gameId] === true) return; // Already won
+
+            gameStatus[gameId] = true;
+            const msgElement = document.getElementById(`secret-msg-${gameId}`);
+            
+            // Animate the message
+            msgElement.textContent = secretMessages[gameId];
+            msgElement.classList.remove('hidden');
+
+            checkFinalMessage();
+        }
+
         // --- Game 1: Memory Match Game Logic ---
         const gameBoard = document.getElementById('game-board');
         const scoreDisplay = document.getElementById('score-display');
         const gameMessageMemory = document.getElementById('game-message-memory');
 
-        // Updated cute emojis, including Cat and Ice Cream
         const emojis = ['🐈', '🍦', '💖', '🌟', '🎀', '✨', '🐾', '🌸']; 
         let gameCards = [];
         let flippedCards = [];
@@ -649,6 +715,9 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                     gameMessageMemory.textContent = "CONGRATULATIONS! You found all 8 pairs! 🎉 You have a great memory, Isra!";
                     gameMessageMemory.classList.remove('hidden', 'bg-red-500', 'bg-yellow-500');
                     gameMessageMemory.classList.add('bg-cute-green');
+                    
+                    // REVEAL SECRET MESSAGE 1
+                    revealSecretMessage('memory');
                 }
             } else {
                 setTimeout(() => {
@@ -673,26 +742,30 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
             tossButton.disabled = true;
             tossButton.textContent = 'Tossing...';
 
-            // Randomly choose Heads or Tails (0=Heads, 1=Tails)
-            const result = Math.floor(Math.random() * 2);
+            const result = Math.floor(Math.random() * 2); // 0=Heads, 1=Tails
             const resultText = result === 0 ? 'Heads (👑)' : 'Tails (🪙)';
             
             coinElement.style.transition = 'transform 0.1s';
-            coinElement.style.transform = 'rotateY(0deg)'; // Reset position
+            coinElement.style.transform = 'rotateY(0deg)'; 
             
             coinResult.textContent = 'Flipping...';
 
-            // Use requestAnimationFrame to ensure CSS classes are applied sequentially
             requestAnimationFrame(() => {
                 coinElement.classList.remove('tossing-head', 'tossing-tail');
-                void coinElement.offsetWidth; // Trigger reflow to restart animation
-                coinElement.style.transition = ''; // Remove transition for animation
+                void coinElement.offsetWidth; 
+                coinElement.style.transition = ''; 
                 coinElement.classList.add(result === 0 ? 'tossing-head' : 'tossing-tail');
             });
 
-            // Wait for the animation (1 second) to complete before showing result
             setTimeout(() => {
-                coinResult.textContent = `The result is: ${resultText}!`;
+                if (result === 0) { // WIN condition: Heads (tum jeetogi)
+                    coinResult.textContent = `The result is: ${resultText}! YOU WIN! 🎉`;
+                    // REVEAL SECRET MESSAGE 2
+                    revealSecretMessage('coin');
+                } else {
+                    coinResult.textContent = `The result is: ${resultText}! Try again.`;
+                }
+                
                 tossButton.disabled = false;
                 tossButton.textContent = 'Toss Coin';
             }, 1000);
@@ -705,26 +778,26 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
         const eightBallQuestion = document.getElementById('eight-ball-question');
 
         const eightBallResponses = [
-            "Absolutely! A definite yes. ✨",
-            "It is certain. Go for it!",
-            "Without a doubt. 👍",
-            "Yes, definitely.",
-            "You may rely on it.",
-            "As I see it, yes.",
-            "Most likely.",
-            "Outlook good.",
-            "Signs point to yes.",
-            "Reply hazy, try again.",
-            "Ask again later. 🤫",
-            "Better not tell you now.",
-            "Cannot predict now.",
-            "Concentrate and ask again.",
-            "Don't count on it.",
-            "My reply is no.",
-            "My sources say no. 😔",
-            "Outlook not so good.",
-            "Very doubtful.",
-            "Only if we get ice cream first! 🍦"
+            "Absolutely! A definite yes. ✨", // Positive
+            "It is certain. Go for it!", // Positive
+            "Without a doubt. 👍", // Positive
+            "Yes, definitely.", // Positive
+            "You may rely on it.", // Positive
+            "As I see it, yes.", // Positive
+            "Most likely.", // Positive
+            "Outlook good.", // Positive
+            "Signs point to yes.", // Positive
+            "Reply hazy, try again.", // Neutral
+            "Ask again later. 🤫", // Neutral
+            "Better not tell you now.", // Neutral
+            "Cannot predict now.", // Neutral
+            "Concentrate and ask again.", // Neutral
+            "Don't count on it.", // Negative
+            "My reply is no.", // Negative
+            "My sources say no. 😔", // Negative
+            "Outlook not so good.", // Negative
+            "Very doubtful.", // Negative
+            "Only if we get ice cream first! 🍦" // Positive (Fun)
         ];
 
         eightBallButton.addEventListener('click', () => {
@@ -744,11 +817,18 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                 const randomIndex = Math.floor(Math.random() * eightBallResponses.length);
                 const answer = eightBallResponses[randomIndex];
                 eightBallAnswer.textContent = answer;
+                
+                // WIN condition: Positive answer
+                const isPositive = answer.includes('yes') || answer.includes('certain') || answer.includes('good') || answer.includes('rely') || answer.includes('only if');
 
                 // Color code the response
-                if (answer.includes('yes') || answer.includes('certain') || answer.includes('good') || answer.includes('rely') || answer.includes('only if')) {
+                if (isPositive) {
                     eightBallAnswer.classList.remove('text-gray-400', 'text-accent-pink', 'text-vibrant-red');
                     eightBallAnswer.classList.add('text-cute-green');
+                    
+                    // REVEAL SECRET MESSAGE 3
+                    revealSecretMessage('eightball'); 
+
                 } else if (answer.includes('hazy') || answer.includes('later') || answer.includes('cannot') || answer.includes('concentrate')) {
                     eightBallAnswer.classList.remove('text-cute-green', 'text-vibrant-red');
                     eightBallAnswer.classList.add('text-accent-pink');
@@ -798,6 +878,9 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
                 guessMessage.classList.remove('text-text-dark', 'text-vibrant-red');
                 guessMessage.classList.add('text-cute-green');
                 guessButton.disabled = true;
+                
+                // REVEAL SECRET MESSAGE 4
+                revealSecretMessage('guess');
             } else if (guess < secretNumber) {
                 guessMessage.textContent = "Too low! Try a higher number.";
                 guessMessage.classList.remove('text-cute-green', 'text-vibrant-red');
@@ -841,6 +924,10 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
             } else if (rpsOptions[userChoice].winsAgainst === compChoice) {
                 resultText = "YOU WIN! 🎉 Great job, Bestie!";
                 rpsResult.classList.add('text-cute-green');
+
+                // REVEAL SECRET MESSAGE 5
+                revealSecretMessage('rps');
+
             } else {
                 resultText = "COMPUTER WINS! Better luck next time! 🥺";
                 rpsResult.classList.add('text-vibrant-red');
@@ -868,4 +955,3 @@ Here’s to many more, Inshallah. <span class="text-primary-light">🤍✨</span
     </script>
 </body>
 </html>
-
